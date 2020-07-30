@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Header from './components/Header';
+import Form from './components/Form';
+
 
 function App() {
+  const [dogPerson, setdogperson]=useState({
+    name: '',
+    dog: '',
+  })
+  
+
+
+  function handleClick(){
+    console.log(dogPerson)
+    setdogperson({name: "Shayanne", dog: "Rio"})
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header name="Shayanne">I like react so far...kinda</Header>
+      {/* <p>Counter: 0 </p> */}
+      {/* <p>my name is {dogPerson.name} and my dog's name is {dogPerson.dog}</p>
+      <button onClick={handleClick}>Display the names!</button> */}
+      <Form/> 
     </div>
   );
 }
